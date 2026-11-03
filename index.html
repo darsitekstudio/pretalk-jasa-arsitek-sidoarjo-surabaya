@@ -178,7 +178,11 @@ h2{font-size:clamp(24px,6.6vw,32px)}
 .vid em{display:block;font:600 13px/1 Montserrat,sans-serif;color:var(--accent);margin-top:12px}
 .vid.v1{background:linear-gradient(180deg,rgba(14,12,10,.1) 0%,rgba(14,12,10,.88) 100%),url(https://img.youtube.com/vi/Z1FHd6RByYM/maxresdefault.jpg) center/cover,url(https://img.youtube.com/vi/Z1FHd6RByYM/hqdefault.jpg) center/cover,linear-gradient(160deg,var(--deep2),var(--deep))}
 .vid.v2{background:linear-gradient(180deg,rgba(14,12,10,.1) 0%,rgba(14,12,10,.88) 100%),url(https://img.youtube.com/vi/fJojEy-VAn8/maxresdefault.jpg) center/cover,url(https://img.youtube.com/vi/fJojEy-VAn8/hqdefault.jpg) center/cover,linear-gradient(160deg,var(--deep2),var(--deep))}
-.vid.v2{min-height:300px!important}
+.vid.v1,.vid.v2{aspect-ratio:16/9;min-height:auto}
+@media (min-width:761px){.vid .pl{top:50%;left:50%;width:76px;height:76px;margin:-38px 0 0 -38px;font-size:26px;padding-left:5px}}
+@media (max-width:760px){.vid{padding:18px}.vid .pl{top:14px;left:16px;width:44px;height:44px;font-size:15px}.vid .vt{font-size:16px}.vid small{margin-bottom:6px;font-size:10px;letter-spacing:.14em}.vid em{margin-top:6px;font-size:12px}}
+.fc .chips{display:flex;flex-wrap:wrap;gap:8px;padding:0}
+.chips span{white-space:nowrap}
 .vid .pl{box-shadow:0 6px 22px rgba(0,0,0,.4)}
 </style>
 </head>
@@ -268,7 +272,7 @@ h2{font-size:clamp(24px,6.6vw,32px)}
 <div class="pj"><button class="img i3" type="button" data-cap="Re House · Sidoarjo · 2025" data-ar="1.4884" aria-label="Perbesar gambar Re House"></button><span class="num" style="margin-top:16px">03 / 04</span><h3>Re House</h3><p>Sidoarjo · 105 m² · 2025 · Japandi</p></div>
 <div class="pj"><button class="img i4" type="button" data-cap="AN House · Tasikmalaya · 2025" data-ar="1.7778" aria-label="Perbesar gambar AN House"></button><span class="num" style="margin-top:16px">04 / 04</span><h3>AN House</h3><p>Tasikmalaya · 165 m² · 2025 · Tropical Modern</p></div>
 </div>
-<div class="w" style="margin-top:8px"><a class="vid v2" style="border:1px solid var(--gl);min-height:210px" href="https://youtu.be/fJojEy-VAn8" target="_blank" rel="noopener" aria-label="Tonton room tour 3D di YouTube"><span class="pl">▶</span><span class="vt"><small>ROOM TOUR 3D · TANGGULANGIN, SIDOARJO</small>Jelajahi hasil desain dari dalam ruangan<em>Tonton di YouTube ↗</em></span></a></div>
+<div class="w" style="margin-top:8px"><a class="vid v2" style="border:1px solid var(--gl)" href="https://youtu.be/fJojEy-VAn8" target="_blank" rel="noopener" aria-label="Tonton room tour 3D di YouTube"><span class="pl">▶</span><span class="vt"><small>ROOM TOUR 3D · TANGGULANGIN, SIDOARJO</small>Jelajahi hasil desain dari dalam ruangan<em>Tonton di YouTube ↗</em></span></a></div>
 <div class="w" style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;justify-content:space-between"><p style="color:var(--on-m);font-size:14px;max-width:420px">Ingin melihat lebih banyak karya kami?</p><a class="btn" href="https://canva.link/wv6x1iqcqyuazcj" target="_blank" rel="noopener">LIHAT PORTOFOLIO LENGKAP ↗</a></div>
 </section>
 
@@ -276,10 +280,10 @@ h2{font-size:clamp(24px,6.6vw,32px)}
 <div class="w">
 <div class="eyebrow">Testimoni</div>
 <h2>Apa kata mereka dari <em>desain</em> yang telah dibuat</h2>
-<div class="grid g3">
+<div class="grid" style="grid-template-columns:minmax(0,760px)">
 <a class="vid v1" href="https://youtu.be/Z1FHd6RByYM" target="_blank" rel="noopener" aria-label="Tonton video testimoni di YouTube"><span class="pl">▶</span><span class="vt"><small>VIDEO TESTIMONI</small>Tonton cerita klien kami<em>Buka di YouTube ↗</em></span></a>
-<div class="quote">[Tempatkan testimoni klien 2]<b>Nama klien · Lokasi</b></div>
-<div class="quote">[Tempatkan testimoni klien 3]<b>Nama klien · Lokasi</b></div>
+
+
 </div>
 </div>
 </section>
