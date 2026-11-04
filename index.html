@@ -198,6 +198,9 @@ h2{font-size:clamp(24px,6.6vw,32px)}
 .cs li{display:flex;gap:14px;align-items:center;background:var(--glass);border:1px solid var(--gl);border-radius:14px;padding:16px 18px;font-weight:600;font-size:14.5px}
 .cs b{font:700 12px/1 ui-monospace,Menlo,Consolas,monospace;color:var(--accent);letter-spacing:.1em}
 @media (max-width:860px){.calcp{grid-template-columns:1fr;padding:28px 22px;gap:24px}}
+.vid.playing{background:#000!important;padding:0;cursor:default;display:block}
+.vid.playing:hover{transform:none;box-shadow:none}
+.vid.playing iframe{position:absolute;inset:0;width:100%;height:100%;border:0;border-radius:inherit}
 </style>
 </head>
 <body>
@@ -302,7 +305,7 @@ h2{font-size:clamp(24px,6.6vw,32px)}
 <div class="pj"><button class="img i3" type="button" data-cap="Re House · Sidoarjo · 2025" data-ar="1.4884" aria-label="Perbesar gambar Re House"></button><span class="num" style="margin-top:16px">03 / 04</span><h3>Re House</h3><p>Sidoarjo · 105 m² · 2025 · Japandi</p></div>
 <div class="pj"><button class="img i4" type="button" data-cap="AN House · Tasikmalaya · 2025" data-ar="1.7778" aria-label="Perbesar gambar AN House"></button><span class="num" style="margin-top:16px">04 / 04</span><h3>AN House</h3><p>Tasikmalaya · 165 m² · 2025 · Tropical Modern</p></div>
 </div>
-<div class="w" style="margin-top:8px"><a class="vid v2" style="border:1px solid var(--gl)" href="https://youtu.be/fJojEy-VAn8" target="_blank" rel="noopener" aria-label="Tonton room tour 3D di YouTube"><span class="pl">▶</span><span class="vt"><small>ROOM TOUR 3D · TANGGULANGIN, SIDOARJO</small>Jelajahi hasil desain dari dalam ruangan<em>Tonton di YouTube ↗</em></span></a></div>
+<div class="w" style="margin-top:8px"><a class="vid v2" data-yt="fJojEy-VAn8" style="border:1px solid var(--gl)" href="https://youtu.be/fJojEy-VAn8" target="_blank" rel="noopener" aria-label="Putar room tour 3D"><span class="pl">▶</span><span class="vt"><small>ROOM TOUR 3D · TANGGULANGIN, SIDOARJO</small>Jelajahi hasil desain dari dalam ruangan<em>Putar video ▶</em></span></a></div>
 <div class="w" style="margin-top:20px;display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center;justify-content:space-between"><p style="color:var(--on-m);font-size:14px;max-width:420px">Ingin melihat lebih banyak karya kami?</p><a class="btn" href="https://canva.link/wv6x1iqcqyuazcj" target="_blank" rel="noopener">LIHAT PORTOFOLIO LENGKAP ↗</a></div>
 </section>
 
@@ -311,7 +314,7 @@ h2{font-size:clamp(24px,6.6vw,32px)}
 <div class="eyebrow">Testimoni</div>
 <h2>Apa kata mereka dari <em>desain</em> yang telah dibuat</h2>
 <div class="grid" style="grid-template-columns:minmax(0,760px)">
-<a class="vid v1" href="https://youtu.be/Z1FHd6RByYM" target="_blank" rel="noopener" aria-label="Tonton video testimoni di YouTube"><span class="pl">▶</span><span class="vt"><small>VIDEO TESTIMONI</small>Tonton cerita klien kami<em>Buka di YouTube ↗</em></span></a>
+<a class="vid v1" data-yt="Z1FHd6RByYM" href="https://youtu.be/Z1FHd6RByYM" target="_blank" rel="noopener" aria-label="Putar video testimoni"><span class="pl">▶</span><span class="vt"><small>VIDEO TESTIMONI</small>Tonton cerita klien kami<em>Putar video ▶</em></span></a>
 
 
 </div>
@@ -365,6 +368,26 @@ if(li.classList.toggle('z')){li.style.transformOrigin=((e.clientX-r.left)/r.widt
 lb.addEventListener('click',closeLb);
 lb.querySelector('.lbx').addEventListener('click',function(e){e.stopPropagation();closeLb()});
 document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)closeLb()});
+})();
+</script>
+<script>
+(function(){
+if(/claude/i.test(location.hostname))return;
+document.querySelectorAll('.vid[data-yt]').forEach(function(a){
+a.addEventListener('click',function(e){
+if(e.button!==0||e.ctrlKey||e.metaKey||e.shiftKey||a.classList.contains('playing'))return;
+e.preventDefault();
+var f=document.createElement('iframe');
+f.src='https://www.youtube-nocookie.com/embed/'+a.getAttribute('data-yt')+'?autoplay=1&rel=0';
+f.title='Video Darsitek Studio';
+f.allow='autoplay; encrypted-media; picture-in-picture; fullscreen';
+f.setAttribute('allowfullscreen','');
+a.removeAttribute('href');
+a.innerHTML='';
+a.classList.add('playing');
+a.appendChild(f);
+});
+});
 })();
 </script>
 </body>
